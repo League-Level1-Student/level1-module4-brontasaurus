@@ -12,9 +12,10 @@ public class pigLatin implements ActionListener{
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JTextField words = new JTextField();
+	JTextField words = new JTextField(20);
 	JButton button = new JButton("translate");
-	JTextField ordsway = new JTextField();
+	JTextField ordsway = new JTextField(20);
+	pigLatinTranslator loopdeloops = new pigLatinTranslator();
 	
 public static void main(String[] args) {
 	
@@ -29,11 +30,18 @@ public void setUp() {
 	button.addActionListener(this);
 	frame.setVisible(true);
 	frame.pack();
+	
+	
 }
+
+
 
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
+	ordsway.setText(loopdeloops.translate(words.getText()));
+	
+
 	
 }
 
